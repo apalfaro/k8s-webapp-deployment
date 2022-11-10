@@ -8,14 +8,14 @@ app = Flask(__name__)
 metrics = PrometheusMetrics(app, group_by='endpoint', path='/metrics')
 
 # static information as metric
-metrics.info('app_info', 'Demo webapp for Prevail', version='1.0.0')
+metrics.info('app_info', 'Demo webapp for PreVeil', version='1.0.0')
 
 @app.route('/')
 @metrics.counter(
     'home_visits', 'Number of invocations of root path')
 def hello():
     return '''
-    <h2>Simple WebApp Demo for Prevail</h2>
+    <h2>Simple WebApp Demo for PreVeil</h2>
     <p>For Prometheus metrics use /metrics</p>
     <a href="metrics">/metrics</a>
     '''
