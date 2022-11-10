@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: preveil-demo
-        image: flask-docker-demo-app
+        image: webapp
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001
