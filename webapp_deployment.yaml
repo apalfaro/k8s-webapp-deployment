@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prevail-demo-deployment
+  labels:
+    app: prevail-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prevail-demo
+  template:
+    metadata:
+      labels:
+        app: prevail-demo
+    spec:
+      containers:
+      - name: prevail-demo
+        image: flask-docker-demo-app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5001
